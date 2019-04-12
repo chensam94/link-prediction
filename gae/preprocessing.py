@@ -43,7 +43,7 @@ def mask_test_edges(adj, test_frac=.1, val_frac=.05, prevent_disconnect=True, ve
     adj = adj - sp.dia_matrix((adj.diagonal()[np.newaxis, :], [0]), shape=adj.shape)
     adj.eliminate_zeros()
     # Check that diag is zero:
-    assert np.diag(adj.todense()).sum() == 0
+    #assert np.diag(adj.todense()).sum() == 0
 
     g = nx.from_scipy_sparse_matrix(adj)
     orig_num_cc = nx.number_connected_components(g)
